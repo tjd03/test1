@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<!--Six 28 Home Page-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Six 28</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+	
+	<!-- Debug Css StyleSheet-->
+	
+	<!-- <link rel="stylesheet" href="C:\Users\Cory\Documents\Developing\Web Applications\Inkur\css\debug.css">-->
+	
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+
+	<!--Navigation Bar-->
+
+  <nav id="communityNavigationBar" class="navbar" role="navigation" aria-label="main navigation" style="margin-top:1em;">
+  <div class="navbar-brand">
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start"style="margin-left:5em;">
+      <a class="navbar-item is-active"  href="/">
+        Home
+      </a>
+
+      <a class="navbar-item" href="">
+        About
+      </a>
+	  
+	  <a class="navbar-item" href="">
+		Contact
+	  </a>
+	 </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-danger" style="margin-right:5em;">
+            <strong>Quick Access</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+	
+	<!--Determining the state of the navigation bar when in a shorter window, such as on a mobile device.-->
+	
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+	// Get all "navbar-burger" elements
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	// Check if there are any navbar burgers
+	if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+	}
+	});
+	</script>
+	</div>
+	</nav>
+
+	<!--Title Section --> 
+
+	<section class="section">
+		<div class="container has-text-centered">
+			<p class="title is-1 is-danger">Six 28</p>
+		</div>
+	</section> 
+	
+	<!--Tile Selection Section --> 
+	
+	<section class="section">
+		<div class="container">
+			<div class="tile is-ancestor">
+				<div class="tile is-parent">
+					<article class="tile is-child box notification is-danger has-text-centered"> 
+						<a href="/algebra1/" style="text-decoration:none" > <p class="title is-2">Algebra 1</p> </a> 
+					</article> 
+			  </div>  
+			  <div class="tile is-parent">
+				<article class="tile is-child box notification is-info has-text-centered">
+				  <a href="/geometry/" style="text-decoration:none" > <p class="title is-2">Geometry</p> </a> 
+				</article>
+			  </div>  
+			  <div class="tile is-parent">
+				<article class="tile is-child box notification is-success has-text-centered"> 
+				  <a href="/algebra2/" style="text-decoration:none" > <p class="title is-2">Algebra 2</p> </a> 
+				</article>
+			  </div> 
+			</div>
+		</div>
+	</section> 
+	
+	<!--Footer of the Home Page--> 
+	
+	<footer class="footer"> 
+		<div class="content has-text-centered">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"/></a>
+			<p>
+				<strong>Six 28,</strong> an ongoing project by Tyler DelRegno. The source code is licensed
+				<a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+			</p>
+		</div>
+	</footer>
+
+</body>
+</html>

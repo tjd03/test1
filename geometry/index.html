@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<!-- Six 28 Geometry Page-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Six 28</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> 
+	<link rel="stylesheet" href="/css/algebra1Style.css" > 
+	
+	<!-- Debug Css StyleSheet--> 
+	
+	<!-- <link rel="stylesheet" href="C:\Users\Cory\Documents\Developing\Web Applications\Inkur\css\debug.css"> --> 
+	
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> 
+</head>
+<body>
+
+	<!--Navigation Bar-->
+
+  <nav id="communityNavigationBar" class="navbar" role="navigation" aria-label="main navigation" style="margin-top:1em;">
+  <div class="navbar-brand">
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start"style="margin-left:5em;">
+      <a class="navbar-item is-active"  href="/">
+        Home
+      </a>
+
+      <a class="navbar-item" href="">
+        About
+      </a>
+	  
+	  <a class="navbar-item" href="">
+		Contact
+	  </a>
+	 </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-danger" style="margin-right:5em;">
+            <strong>Quick Access</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+	
+	<!--Determining the state of the navigation bar when in a shorter window, such as on a mobile device.-->
+	
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+	// Get all "navbar-burger" elements
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	// Check if there are any navbar burgers
+	if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+	}
+	});
+	</script>
+	</div>
+	</nav> 
+	
+	<!-- Midpoint and Distance Formula Section --> 
+	
+	<section class="section">
+		<form class="container " name="midpoint" > 
+			<div class="field "> 
+				  <div class="field is-normal">
+					<label class="label text-center " >Midpoint and Distance Formula</label> 
+				  </div> 
+				  
+				  <br>
+				  
+				  <div class="field-body is-horizontal " >
+					<div class="field " >
+					  <div class="control objects-center "> 
+						<label for="x1Value " class=" label-text " > ( </label> 
+						<input class="scale input-properties " type="text" placeholder="x1" size="1" id="x1Value" name="x1Value" > 
+						
+					    <label for="y1Value " class="label-text " > , </label> 
+						<input class="scale input-properties " type="text" placeholder="y1" size="1" id="y1Value" name="y1Value" > 
+						
+					    <label for="x2Value " class="label-text " > ) ( </label> 
+						<input class="scale input-properties " type="text" placeholder="x2" size="1" id="x2Value" name="x2Value" > 
+						
+					    <label for="y2Value " class="label-text " > , </label> 
+						<input class="scale input-properties " type="text" placeholder="x2" size="1" id="y2Value" name="y2Value" > 
+						
+					    <label for="endInput2 " class="label-text " > ) </label> 
+						<input class=" invisible " type="text" size="1" style="width: 0px; " id="endInput2" name="endInput2" >
+					  </div> 
+					  
+					  <br> 
+					  
+					  <div class=" control objects-center " > 
+					  <a class="button is-success " onclick=" 
+					  midpoint.midXAnswer.value = eval((parseInt(midpoint.x1Value.value) + parseInt(midpoint.x2Value.value)) / 2 ), 
+					  
+					  midpoint.midYAnswer.value = eval((parseInt(midpoint.y1Value.value) + parseInt(midpoint.y2Value.value)) / 2 ), 
+					  
+					  midpoint.disAnswer.value = eval(Math.round((Math.sqrt((Math.pow((parseInt(midpoint.x2Value.value) - parseInt(midpoint.x1Value.value)), 2 )) + (Math.pow((parseInt(midpoint.y2Value.value) - parseInt(midpoint.y1Value.value)), 2 )))) * 1000) / 1000 ) 
+					   ">Calculate</a> 
+					  </div> 
+					  
+					</div> 
+					
+					</div>
+				</div> 
+				
+				<!-- Midpoint Formula Answer --> 
+				
+				<div class=" field is-horizontal " >
+				  <div class=" field-body ">
+					<div class=" field " >
+					  <div class=" control objects-center "> 
+						<label for="midXAnswer " class="label-text " > MidPoint = ( </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="x" size="1" id="midXAnswer" name="midXAnswer" readonly > 
+						
+					    <label for="midYAnswer " class=" label-text input-answer " > , </label> 
+						<input class= " scale input-properties input-answer " type="text" placeholder="y" size="1" id="midYAnswer" name="midYAnswer" readonly > 
+						
+					    <label for="endInput " class=" label-text " > ) </label> 
+						<input class= " invisible " type="text" size="1" style="width: 0px; " id="endInput" name="endInput" >
+					  </div> 
+					</div>
+				  </div>
+				</div> 
+				
+				<!-- Distance Formula Answer --> 
+				
+				<div class="field is-horizontal " >
+				  <div class="field-body">
+					<div class="field " >
+					  <div class=" control objects-center " > 
+						<label for="disAnswer " class="label-text " > Distance = </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="answer" size="5" id="disAnswer" name="disAnswer" readonly >
+					  </div> 
+					  
+					</div> 
+				  </div> 
+				</div> 
+				
+			</form> 
+	</section> 
+	
+	<!-- Arc Length Section --> 
+	
+	<section class="section">
+		<form class="container " name="arcLength" > 
+			<div class="field "> 
+				  <div class="field is-normal">
+					<label class="label text-center " >Arc Length</label> 
+				  </div> 
+				  
+				  <br>
+				  
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="angle " class=" label-text " > Angle =  </label> 
+						<input class="scale input-properties " type="text" placeholder="degrees" size="4" id="angle" name="angle" >
+					  </div> 
+					  
+					</div> 
+					
+					</div> 
+					
+					<br> 
+					
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="radius " class=" label-text " > Radius =  </label> 
+						<input class="scale input-properties " type="text" placeholder="units" size="4" id="radius" name="radius" >
+					  </div> 
+					  
+					  <br> 
+					  
+					  <div class=" control objects-center " > 
+					  <a class="button is-success " onclick="arcLength.arcLengthAnswer.value = eval(Math.round(((2 * Math.PI * parseInt(arcLength.radius.value)) * (parseInt(arcLength.angle.value) / 360)) * 1000 ) / 1000)" >Calculate</a> 
+					  </div> 
+					  
+					</div> 
+					
+					</div>
+				</div> 
+				
+				<!-- Arc Length Answer --> 
+				
+				<div class="field is-horizontal " >
+				  <div class="field-body">
+					<div class="field " >
+					  <div class=" control objects-center " > 
+						<label for="arcLengthAnswer " class="label-text " > Arc Length = </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="answer" size="5" id="arcLengthAnswer" name="arcLengthAnswer" readonly >
+					  </div> 
+					  
+					</div> 
+				  </div> 
+				</div> 
+				
+			</form> 
+	</section> 
+	
+	<!-- Area of Regular Polygons Section --> 
+	
+	<section class="section">
+		<form class="container " name="polyArea" > 
+			<div class="field "> 
+				  <div class="field is-normal">
+					<label class=" label text-center " >Area of Regular Polygons</label> 
+				  </div> 
+				  
+				  <br>
+				  
+				  <div class=" field-body " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="sides " class=" label-text " > # of Sides =  </label> 
+						<input class="scale input-properties " type="text" placeholder="sides" size="4" id="sides" name="sides" > 
+					  </div> 
+					  
+					</div> 
+					
+					</div> 
+					
+					<br> 
+					
+				  <div class=" field-body " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="length " class=" label-text " > Length of One Side =  </label> 
+						<input class="scale input-properties " type="text" placeholder="units" size="4" style="margin-right: 16px; " id="length" name="length" >
+					  </div> 
+					  
+					  <br> 
+					  
+					  <div class=" control objects-center " > 
+					  <a class="button is-success " onclick="polyArea.interiorAngleAnswer.value = eval((((parseInt(polyArea.sides.value) - 2) * 180 ) / (parseInt(polyArea.sides.value))) / 2 ), 
+					  
+					  polyArea.apothemAnswer.value = eval((parseInt(polyArea.length.value) / 2 ) * (Math.tan(parseFloat(polyArea.interiorAngleAnswer.value) * Math.PI/180))), 
+					  
+					  polyArea.areaAnswer.value = eval(Math.round((0.5 * parseFloat(polyArea.apothemAnswer.value) * parseInt(polyArea.sides.value) * parseInt(polyArea.length.value)) * 1000 ) / 1000 ) 
+					  " >Calculate</a> 
+					  </div> 
+					  
+					</div> 
+					
+					</div>
+				</div> 
+				
+				<!-- Area of Regular Polygons Answer --> 
+				
+				<div class=" field is-horizontal " >
+				  <div class=" field-body " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="areaAnswer " class="label-text " > Area = </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="answer" size="5" id="areaAnswer" name="areaAnswer" readonly > 
+					  </div> 
+					  
+					  <div class="control"> 
+					    <input class=" scale input-properties input-answer invisible " type="text" size="5" id="interiorAngleAnswer" name="interiorAngleAnswer" readonly > 
+					  </div> 
+					  
+					  <div class="control"> 
+					    <input class=" scale input-properties input-answer invisible " type="text" size="5" id="apothemAnswer" name="apothemAnswer" readonly > 
+					  </div> 
+					  
+					</div> 
+				  </div> 
+				</div> 
+				
+			</form> 
+	</section> 
+	
+	<!-- Footer of the Geometry Page --> 
+	
+	<footer class="footer"> 
+		<div class="content has-text-centered">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"/></a>
+			<p>
+				<strong>Six 28,</strong> an ongoing project by Tyler DelRegno. The source code is licensed
+				<a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+			</p>
+		</div>
+	</footer>
+	
+</body> 
+</html> 

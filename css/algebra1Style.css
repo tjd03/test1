@@ -1,0 +1,42 @@
+.scale { 
+	-ms-transform: scale(1.2, 1.2); 
+	-webkit-transform: scale(1.2, 1.2); 
+	transform: scale(1.2, 1.2); 
+} 
+.objects-left { 
+	display: flex; 
+	justify-content: left; 
+	align-items: left;
+} 
+.objects-center { 
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+} 
+.text-left { 
+	text-align: left; 
+} 
+.text-center { 
+	text-align: center; 
+} 
+.center-vertical { 
+	vertical-align: true; 
+} 
+.label-text { 
+	font-size: 20px; 
+} 
+.input-properties { 
+	text-align: center; 
+	margin-right: 8px; 
+	margin-left: 8px; 
+} 
+.invisible { 
+	visibility: hidden; 
+} 
+.input-answer { 
+    background-color: transparent; 
+    border: 0px solid; 
+} 
+.input-answer:focus { 
+    outline: none; 
+} 

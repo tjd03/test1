@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<!-- Six 28 Algebra Two Page-->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Six 28</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> 
+	<link rel="stylesheet" href="/css/algebra1Style.css" > 
+	
+	<!-- Debug Css StyleSheet--> 
+	
+	<!-- <link rel="stylesheet" href="C:\Users\Cory\Documents\Developing\Web Applications\Inkur\css\debug.css"> --> 
+	
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> 
+</head>
+<body>
+
+	<!--Navigation Bar-->
+
+  <nav id="communityNavigationBar" class="navbar" role="navigation" aria-label="main navigation" style="margin-top:1em;">
+  <div class="navbar-brand">
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navMenu" class="navbar-menu">
+    <div class="navbar-start"style="margin-left:5em;">
+      <a class="navbar-item is-active"  href="/">
+        Home
+      </a>
+
+      <a class="navbar-item" href="">
+        About
+      </a>
+	  
+	  <a class="navbar-item" href="">
+		Contact
+	  </a>
+	 </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-danger" style="margin-right:5em;">
+            <strong>Quick Access</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+	
+	<!--Determining the state of the navigation bar when in a shorter window, such as on a mobile device.-->
+	
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+
+	// Get all "navbar-burger" elements
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	// Check if there are any navbar burgers
+	if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+	}
+	});
+	</script>
+	</div>
+	</nav> 
+	
+	<!-- Exponential Equations Section --> 
+	
+	<!-- Simple Interest Formulas Equation Section --> 
+	
+	<section class="section">
+		<form class="container " name="simpleInterest" > 
+			<div class="field "> 
+				  <div class="field is-normal">
+					<label class="label text-center " >Simple Interest</label> 
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="simpDeposit " class=" label-text " > Original Deposit = </label> 
+						<input class="scale input-properties " type="text" placeholder="$$" size="4" id="simpDeposit" name="simpDeposit" > 
+					  </div> 
+					  
+					</div> 
+					
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="simpRate " class="label-text " > Interest Rate % = </label> 
+						<input class="scale input-properties " type="text" placeholder="percent" size="4" id="simpRate" name="simpRate" > 
+					  </div> 
+					  
+					</div> 
+					
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class="field-body is-horizontal " >
+					<div class="field " >
+					  <div class="control objects-center "> 
+						<label for="simpYears " class="label-text " > # of Years = </label> 
+						<input class="scale input-properties " type="text" placeholder="time" size="4" id="simpYears" name="simpYears" > 
+						
+					  </div> 
+					  
+					  <br> 
+					  
+					  <div class=" control objects-center " > 
+					  <a class="button is-success " onclick="simpleInterest.simpleInterestAnswer.value = eval(parseFloat(simpleInterest.simpDeposit.value) * ( 1 + ((parseFloat(simpleInterest.simpRate.value) / 100 ) * parseFloat(simpleInterest.simpYears.value)))), 
+					  
+					  simpleInterest.simpleInterestGained.value = eval(Math.round((parseFloat(simpleInterest.simpleInterestAnswer.value) - parseFloat(simpleInterest.simpDeposit.value)) * 100 ) / 100 ) 
+					  ">Calculate</a> 
+					  </div> 
+					  
+					</div> 
+					
+					</div>
+				</div> 
+				
+				<!-- Simple Interest Answer --> 
+				
+				<div class=" field is-horizontal " >
+				  <div class=" field-body ">
+					<div class=" field " >
+					  <div class=" control objects-center "> 
+						<label for="simpleInterestAnswer " class="label-text " > Total Value = $ </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="000.00" size="8" id="simpleInterestAnswer" name="simpleInterestAnswer" readonly > 
+						
+					  </div> 
+					</div>
+				  </div>
+				</div> 
+				
+				<div class=" field is-horizontal " >
+				  <div class=" field-body ">
+					<div class=" field " >
+					  <div class=" control objects-center "> 
+						<label for="simpleInterestGained " class="label-text " > Amount Gained = $ </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="000.00" size="8" id="simpleInterestGained" name="simpleInterestGained" readonly > 
+						
+					  </div> 
+					</div>
+				  </div>
+				</div> 
+				
+			</form> 
+	</section> 
+	
+	<!-- Compounded Interest Formulas Equation Section --> 
+	
+	<section class="section">
+		<form class="container " name="compoundInterest" > 
+			<div class="field "> 
+				  <div class="field is-normal">
+					<label class="label text-center " >Compound Interest</label> 
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="compDeposit " class=" label-text " > Original Deposit = </label> 
+						<input class="scale input-properties " type="text" placeholder="$$" size="4" id="compDeposit" name="compDeposit" > 
+					  </div> 
+					  
+					</div> 
+					
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="compRate " class="label-text " > Interest Rate % = </label> 
+						<input class="scale input-properties " type="text" placeholder="percent" size="4" id="compRate" name="compRate" > 
+					  </div> 
+					  
+					</div> 
+					
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class=" field-body is-horizontal " >
+					<div class=" field " >
+					  <div class=" control objects-center " > 
+						<label for="compound " class="label-text " > # of Times Compounded = </label> 
+						<input class="scale input-properties " type="text" placeholder="##" size="2" id="compound" name="compound" > 
+					  </div> 
+					  
+					</div> 
+					
+				  </div> 
+				  
+				  <br> 
+				  
+				  <div class="field-body is-horizontal " >
+					<div class="field " >
+					  <div class="control objects-center "> 
+						<label for="compYears " class="label-text " > # of Years = </label> 
+						<input class="scale input-properties " type="text" placeholder="time" size="4" id="compYears" name="compYears" > 
+						
+					  </div> 
+					  
+					  <br> 
+					  
+					  <div class=" control objects-center " > 
+					  <a class="button is-success " onclick="compoundInterest.compoundInterestAnswer.value = eval(Math.round((parseFloat(compoundInterest.compDeposit.value) * Math.pow((1 + ((parseFloat(compoundInterest.compRate.value) / 100 ) / parseFloat(compoundInterest.compound.value))), (parseFloat(compoundInterest.compound.value) * parseFloat(compoundInterest.compYears.value)))) * 100 ) / 100 ), 
+					  
+					  compoundInterest.compoundInterestGained.value = eval(Math.round((parseFloat(compoundInterest.compoundInterestAnswer.value) - parseFloat(compoundInterest.compDeposit.value)) * 100 ) / 100 ) 
+					  ">Calculate</a> 
+					  </div> 
+					  
+					</div> 
+					
+					</div>
+				</div> 
+				
+				<!-- Compounded Interest Answer --> 
+				
+				<div class=" field is-horizontal " >
+				  <div class=" field-body ">
+					<div class=" field " >
+					  <div class=" control objects-center "> 
+						<label for="compoundInterestAnswer " class="label-text " > Total Value = $ </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="000.00" size="8" id="compoundInterestAnswer" name="compoundInterestAnswer" readonly > 
+						
+					  </div> 
+					</div>
+				  </div>
+				</div> 
+				
+				<div class=" field is-horizontal " >
+				  <div class=" field-body ">
+					<div class=" field " >
+					  <div class=" control objects-center "> 
+						<label for="compoundInterestGained " class="label-text " > Amount Gained = $ </label> 
+					    <input class=" scale input-properties input-answer " type="text" placeholder="000.00" size="8" id="compoundInterestGained" name="compoundInterestGained" readonly > 
+						
+					  </div> 
+					</div>
+				  </div>
+				</div> 
+				
+			</form> 
+	</section> 
+	
+</body> 
+</html> 
